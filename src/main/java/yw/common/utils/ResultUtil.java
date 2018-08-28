@@ -41,7 +41,7 @@ public class ResultUtil {
 		result.put("code", code);
 		result.put("message", message);
 		result.put("exception", exception);
-		result.put("data", object);
+		result.put("data", Objects.isNull(object)?"":object);
 		return result;
 	}
 

@@ -51,7 +51,7 @@ public class HttpTool {
 			try {
 				return JSONObject.parseObject(json.toString());
 			} catch (Exception e) {
-				throw new JsonPaseException(e.getMessage());
+				throw new JsonPaseException(e);
 			}
 		}
 	}

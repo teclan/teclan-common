@@ -16,5 +16,9 @@ public class JsonPaseException extends Exception {
 	public JsonPaseException(String message) {
 		super(message);
 	}
+	
+	 public JsonPaseException(Throwable cause) {
+	        super(cause);
+	    }
 
 }
