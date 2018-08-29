@@ -179,6 +179,21 @@ public class SqlGenerateUtils {
         }
         return Objects.Joiner(" " + logic + " ", columns);
     }
+    
+    
+    public static String getSimpleQuerySql(Map<String, Object> namesAndValues, boolean exact, String logic) {
+
+        String[] columns = new String[namesAndValues.size()];
+
+        int index = 0;
+        for (String key : namesAndValues.keySet()) {
+            columns[index] = exact ? String.format("%s = ?", key) : String.format("%s like ?", key);
+            index++;
+        }
+        return Objects.Joiner(" " + logic + " ", columns);
+    }
+    
+    
 
     /**
      * 获取区间查询条件的SQL
