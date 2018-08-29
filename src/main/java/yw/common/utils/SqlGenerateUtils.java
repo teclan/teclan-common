@@ -97,6 +97,19 @@ public class SqlGenerateUtils {
         }
         return values;
     }
+    
+    public static Object[] getSimpleValues(Map<String, Object> namesAndValues, boolean exact) {
+
+        Object[] values = new Object[namesAndValues.size()];
+
+        int index = 0;
+        for (String key : namesAndValues.keySet()) {
+            Object value = namesAndValues.get(key).toString();
+            values[index] = exact ? value : "%" + value + "%";
+            index++;
+        }
+        return values;
+    }
 
     public static Object[] getSimpleValues2(String json, boolean exact) {
 
