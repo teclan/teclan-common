@@ -115,6 +115,10 @@ public class PropertyUtils {
 	public long getLongValue(String key) {
 		return Long.parseLong(getValue(key));
 	}
+	
+	public boolean getBoolean(String key) {
+		return Boolean.valueOf(getValue(key));
+	}
 
 	public synchronized String getValue(String key) {
 		Properties properties = new Properties();
