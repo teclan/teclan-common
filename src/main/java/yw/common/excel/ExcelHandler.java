@@ -23,6 +23,6 @@ public interface ExcelHandler {
 	 * @param row
 	 * @return
 	 */
-	public boolean handle(Row row);
+	public boolean handle(Row row) throws Exception;
 
 }

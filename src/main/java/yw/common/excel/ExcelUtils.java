@@ -173,7 +173,7 @@ public class ExcelUtils {
 		return result;
 	}
 
-	public static boolean analyze(String filePath, ExcelHandler excelHandler) {
+	public static boolean analyze(String filePath, ExcelHandler excelHandler) throws Exception {
 
 		Workbook wb = null;
 		InputStream input = null;
@@ -204,14 +204,13 @@ public class ExcelUtils {
 
 			for (int i = 1; i <= LastRow; i++) {
 				Row row = sheet.getRow(i);
-
 				excelHandler.handle(row);
 			}
 		}
 		return true;
 	}
 
-	public static boolean analyze(String filePath, ExcelHandler... excelHandlers) {
+	public static boolean analyze(String filePath, ExcelHandler... excelHandlers) throws Exception {
 
 		Workbook wb = null;
 		InputStream input = null;
