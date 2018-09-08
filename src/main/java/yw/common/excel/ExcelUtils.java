@@ -468,6 +468,10 @@ public class ExcelUtils {
 			return getValue(cell);
 		}
 	}
+	
+	public static String getBigDecimalValue(Cell cell) {
+		return getPhoneValueString(cell);
+	}
 
 	public static String getValue(Cell cell) {
 
